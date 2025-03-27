@@ -1,0 +1,36 @@
+{
+  "name": "@nejs/semver",
+  "version": "1.0.0",
+  "description": "A pure JavaScript wrapper for semantic versions",
+  "main": "dist/semver.js",
+  "scripts": {
+    "build": "node bin/build.mjs",
+    "test": "vitest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/nyteshade/ne-semver.git"
+  },
+  "keywords": [
+    "JavaScript",
+    "SemVer"
+  ],
+  "author": "Brielle Harrison <nyteshade at gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nyteshade/ne-semver/issues"
+  },
+  "homepage": "https://github.com/nyteshade/ne-semver#readme",
+  "type": "commonjs",
+  "exports": {
+    ".": {
+      "require": "./dist/semver.js",
+      "import": "./dist/semver.mjs",
+      "default": "./dist/semver.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "devDependencies": {
+    "vitest": "^3.0.9"
+  }
+}
