@@ -18,14 +18,14 @@ try {
       modulejs(packageName),
     ].map(bufferToString).join('\n'),
 
-    iffyjs: [
-      iffyjs(packageName, sourceCode),
+    iifejs: [
+      iifejs(packageName, sourceCode),
     ].map(bufferToString).join('\n'),
   }
 
   await writeFile(`./dist/${filename}.js`, files.commonjs)
   await writeFile(`./dist/${filename}.mjs`, files.modulejs)
-  await writeFile(`./dist/${filename}.browser.js`, files.iffyjs)
+  await writeFile(`./dist/${filename}.browser.js`, files.iifejs)
 }
 catch (error) {
   console.error(error)
@@ -40,7 +40,7 @@ function commonjs(packageName) {
   ].join('\n')
 }
 
-function iffyjs(packageName, sourceCode) {
+function iifejs(packageName, sourceCode) {
   return [
     '(function () {',
       '',
